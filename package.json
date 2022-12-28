@@ -4,7 +4,7 @@
   "description": "Project developed to simulate an ecommerce fake to manage sales, products and user from a store",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts"
   },
   "keywords": [],
   "author": {

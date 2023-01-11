@@ -9,7 +9,7 @@ export const AppDataSource = new DataSource({
   database: 'sales_management_api',
   synchronize: true,
   logging: true,
-  entities: [],
+  entities: ['src/modules/**/typeorm/entities/*{.ts,js}'],
   subscribers: [],
   migrations: ['src/shared/typeorm/migrations/**/*{.ts,js}']
 })

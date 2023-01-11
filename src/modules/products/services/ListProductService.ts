@@ -2,9 +2,9 @@ import Product from '../typeorm/entities/Product'
 import { ProductsRepository } from '../typeorm/repositories/ProductsRepository'
 
 export default class ListProductService {
-  productRepository: ProductsRepository
+  private readonly productRepository: ProductsRepository
 
-  construtor (): void {
+  constructor () {
     this.productRepository = new ProductsRepository()
   }
 

@@ -1,4 +1,5 @@
 import 'reflect-metadata'
+import 'dotenv/config'
 import { AppDataSource } from '../typeorm/data-source'
 import { app } from './app'
 
@@ -7,7 +8,7 @@ import { app } from './app'
 // once in your application bootstrap
 AppDataSource.initialize()
   .then(() => {
-    const port = 3000
-    app.listen(port, () => console.log(`Server started on port ${port}`))
+    const port = process.env.API_PORT ?? ''
+    app.listen(port, () => console.log(`Server started on porta ${port}`))
   })
   .catch((error) => console.log(error))

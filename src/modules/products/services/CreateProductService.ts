@@ -11,7 +11,7 @@ interface IRequest {
 export default class CreateProductService {
   productRepository: ProductsRepository
 
-  construtor (): void {
+  constructor () {
     this.productRepository = new ProductsRepository()
   }
 

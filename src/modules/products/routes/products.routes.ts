@@ -6,5 +6,6 @@ const productsController = new ProductsController()
 
 productsRouter.get('/', productsController.index)
 productsRouter.get('/:id', productsController.show)
+productsRouter.post('/', productsController.create)
 
 export default productsRouter

@@ -3,6 +3,7 @@ import ListProductService from '../services/ListProductService'
 import ShowProductService from '../services/ShowProductService'
 import CreateProductService from '../services/CreateProductService'
 import UpdateProductService from '../services/UpdateProductService'
+import DeleteProductService from '../services/DeleteProductService'
 
 export default class ProductsController {
   public async index (req: Request, resp: Response): Promise<Response> {
@@ -46,5 +47,13 @@ export default class ProductsController {
     })
 
     return resp.json(product)
+  }
+
+  public async delete (req: Request, resp: Response): Promise<Response> {
+    const { id } = req.params
+    const deleteProduct = new DeleteProductService()
+
+    await deleteProduct.execute({ id })
+    return resp.json([])
   }
 }
